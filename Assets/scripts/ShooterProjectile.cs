@@ -1,33 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shooter : MonoBehaviour
+public class ShooterProjectile : MonoBehaviour
 {
 
     // Reference to projectile prefab to shoot
     public GameObject projectile;
-    public float projectileSpeed = 10.0f;
+    public float projectileSpeed = 20.0f;
 
     // Reference to AudioClip to play
     public AudioClip shootSFX;
 
     // Update is called once per frame
-    void Shoot()
+    public void Shoot()
     {
 
         // if projectile is specified
         if (projectile)
         {
             // Instantiante projectile at the camera + 1 meter forward with camera rotation
-            GameObject newProjectile = Instantiate(projectile, transform.position + transform.forward, transform.rotation) as GameObject;
+            GameObject newProjectile = Instantiate(projectile, transform.position + transform.right, transform.rotation) as GameObject;
 
             // if the projectile does not have a rigidbody component, add one
-            if (!newProjectile.GetComponent<Rigidbody>())
+            if (!newProjectile.GetComponent<Rigidbody2D>())
             {
-                newProjectile.AddComponent<Rigidbody>();
+                newProjectile.AddComponent<Rigidbody2D>();
             }
+
+            //TODO: Remove this once projectile is created and default is 0 gravity scale
+            newProjectile.GetComponent<Rigidbody2D>().gravityScale = 0;
+
             // Apply force to the newProjectile's Rigidbody component if it has one
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
+            newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.right.x * projectileSpeed, transform.right.y * projectileSpeed);
 
             // play sound effect if set
             if (shootSFX)
@@ -45,6 +49,8 @@ public class Shooter : MonoBehaviour
                     AudioSource.PlayClipAtPoint(shootSFX, newProjectile.transform.position);
                 }
             }
+
+            Destroy(newProjectile, 3.0f);
         }
     }
 }
