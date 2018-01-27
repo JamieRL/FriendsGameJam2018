@@ -38,6 +38,13 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (GameManager.gm)
+        {
+            if (GameManager.gm.gameIsOver)
+            {
+                return;
+            }
+        }
         
         if(health <= 0) {
             
