@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 61489898065366168}
   - component: {fileID: 114908706034080986}
   - component: {fileID: 114840037750817518}
+  - component: {fileID: 114940067058960750}
+  - component: {fileID: 114277692279893342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -89,6 +91,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.375, y: 1.375}
   m_EdgeRadius: 0
+--- !u!114 &114277692279893342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237793636290700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb3c8a850fcd0343908d2a3192a8c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  projectileSpeed: 20
+  fireRate: 1
+  shootSFX: {fileID: 0}
 --- !u!114 &114840037750817518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +130,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
+--- !u!114 &114940067058960750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1237793636290700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87964a94d5717d4b94173a1de132284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212963375264817644
 SpriteRenderer:
   m_ObjectHideFlags: 1
