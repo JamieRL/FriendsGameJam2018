@@ -13,6 +13,9 @@ public class Chaser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        if(!target) {
+            target = GameObject.FindWithTag("Player").transform;
+        }
 	}
 	
 	// Update is called once per frame
