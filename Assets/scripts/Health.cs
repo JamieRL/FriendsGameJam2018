@@ -51,7 +51,6 @@ public class Health : MonoBehaviour {
             else {
                 transform.position = respawnPosition;
                 transform.rotation = respawnRotation;
-                Camera mcam = Camera.main;
                 health = respawnHealthPoints;
 
             }
