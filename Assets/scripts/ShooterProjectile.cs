@@ -16,7 +16,7 @@ public class ShooterProjectile : MonoBehaviour
 
     void Start()
     {
-        lastShotTimeStamp = Time.time;
+        lastShotTimeStamp = 0.0f;
     }
 
     public void Shoot()
