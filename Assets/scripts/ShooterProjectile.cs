@@ -19,7 +19,6 @@ public class ShooterProjectile : MonoBehaviour
         lastShotTimeStamp = Time.time;
     }
 
-    // Update is called once per frame
     public void Shoot()
     {
         if ((Time.time - lastShotTimeStamp) >= fireRate)
