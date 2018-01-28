@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - Tower
+  - Node
   layers:
   - Default
   - TransparentFX
