@@ -357,9 +357,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   damageOnTrigger: 0
-  damageOnCollision: 1
-  continuousDamage: 0
-  continuousTimeBetweenHits: 0
+  damageOnCollision: 0
+  continuousDamage: 1
+  continuousTimeBetweenHits: 2
   destroySelfOnImpact: 0
   delayBeforeDestroy: 0
   explosionPrefab: {fileID: 0}

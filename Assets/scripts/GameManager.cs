@@ -14,7 +14,13 @@ public class GameManager : MonoBehaviour
 
     public Button startButton;
 
+    public Button instructionButton;
+
+    public Button hideInstructionButton;
+
     public Canvas menuCanvas;
+
+    public Canvas instructionsCanvas;
 
     public int numberOfNodes = 1;
 
@@ -49,7 +55,17 @@ public class GameManager : MonoBehaviour
         gameIsOver = false;
         menuCanvas.gameObject.SetActive(false);
     }
+    void showInstructions()
+    {
+        instructionsCanvas.gameObject.SetActive(true);
+        menuCanvas.gameObject.SetActive(false);
+    }
 
+    void hideInstructions()
+    {
+        instructionsCanvas.gameObject.SetActive(false);
+        menuCanvas.gameObject.SetActive(true);
+    }
     public void restartGame() {
         gameIsOver = true;
         menuCanvas.gameObject.SetActive(true);
@@ -67,8 +83,15 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Button btn = startButton.GetComponent<Button>();
-        btn.onClick.AddListener(startGame);
+        Button strtbtn = startButton.GetComponent<Button>();
+        Button instrbtn = instructionButton.GetComponent<Button>();
+        Button hideinstrbtn = hideInstructionButton.GetComponent<Button>();
+
+        strtbtn.onClick.AddListener(startGame);
+        instrbtn.onClick.AddListener(showInstructions);
+        hideinstrbtn.onClick.AddListener(hideInstructions);
+
+      
     }
 
     // Update is called once per frame
