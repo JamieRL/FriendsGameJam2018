@@ -5,9 +5,25 @@ using UnityEngine;
 public class Connector : Health {
 
 
-   // public float maxTimeDead = 5.0f;
-   // private float timeDead = 0.0f;
+    // public float maxTimeDead = 5.0f;
+    // private float timeDead = 0.0f;
+    public float deathDelay = 0.2f;
 
+
+    IEnumerator waitAndDestroy(){
+        yield return new WaitForSeconds(deathDelay);
+        DestroyObject(gameObject);
+
+    }
+
+    private void explode() {
+        GetComponent<Animator>().SetBool("isDead", true);
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        GetComponent<Rigidbody2D>().angularVelocity = 0.0f;
+        GetComponent<SpriteRenderer>().sprite = null;
+        AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
+    }
 
     // Override player die method
     public override void Die() {
@@ -26,11 +42,19 @@ public class Connector : Health {
 
 
                     //kill the connector enemy
-                    Destroy(gameObject);
+                    explode();
+
+                    StartCoroutine(waitAndDestroy());
+
                 }
             }
         }
-        Destroy(gameObject);
+
+        explode();
+
+
+        StartCoroutine(waitAndDestroy());
+
 
     }
 
@@ -40,7 +64,13 @@ public class Connector : Health {
 
     public override void Update()
     {
+        if(isAlive == false){
+            GetComponent<Animator>().SetBool("isDead", false);
+
+            return;
+        }
         if(health <= 0) {
+            isAlive = false;
             Die();
         }
 

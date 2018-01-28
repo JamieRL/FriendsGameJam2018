@@ -23,7 +23,10 @@ GameObject:
   - component: {fileID: 61784585429487962}
   - component: {fileID: 50149311460142996}
   - component: {fileID: 114189105198192278}
-  - component: {fileID: 114001721325107960}
+  - component: {fileID: 95926732738112878}
+  - component: {fileID: 114441079014816004}
+  - component: {fileID: 114046226186506064}
+  - component: {fileID: 58724278580063112}
   m_Layer: 0
   m_Name: ConnectorEnemy
   m_TagString: Untagged
@@ -64,6 +67,21 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58724278580063112
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050366888732594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 9
 --- !u!61 &61784585429487962
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -89,7 +107,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
---- !u!114 &114001721325107960
+--- !u!95 &95926732738112878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050366888732594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 456791a4d70734749a66f2e2fef656db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114046226186506064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,12 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1050366888732594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c570344be75954b83da75aca874fb5, type: 3}
+  m_Script: {fileID: 11500000, guid: ddb914f9d0480134aa00fd372deaed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveSpeed: 3
-  minFollowDistance: 0
+  moveSpeed: 5
+  directionChangeRate: 1
 --- !u!114 &114189105198192278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,11 +152,27 @@ MonoBehaviour:
   numLives: 1
   isAlive: 1
   respawnHealthPoints: 0
+  explosionClip: {fileID: 8300000, guid: 9688fe7034d7385409f1254e6e18a071, type: 3}
   deathViewTime: 2
   deathAnimator: {fileID: 0}
   deathAudioSource: {fileID: 0}
   deathEmitters: {fileID: 0}
   LevelToLoad: 
+  deathDelay: 0.68
+--- !u!114 &114441079014816004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050366888732594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c570344be75954b83da75aca874fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  moveSpeed: 3
+  minFollowDistance: 0
 --- !u!212 &212352335223515182
 SpriteRenderer:
   m_ObjectHideFlags: 1
