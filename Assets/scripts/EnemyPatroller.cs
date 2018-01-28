@@ -8,7 +8,6 @@ public class EnemyPatroller : MonoBehaviour {
     public float directionChangeRate = 1.0f;
 
     private Chaser chaseBehaviour;
-    private float timeSinceDirectionChange;
     private Rigidbody2D enemyRigidbody2d;
     private Vector3 startPos;
     private Vector3 endPos;
@@ -17,7 +16,6 @@ public class EnemyPatroller : MonoBehaviour {
     void Awake() {
         chaseBehaviour = GetComponent<Chaser>();
         enemyRigidbody2d = GetComponent<Rigidbody2D>();
-        timeSinceDirectionChange = 0.0f;
 
         chaseBehaviour.enabled = false;
 
@@ -27,16 +25,12 @@ public class EnemyPatroller : MonoBehaviour {
     {
         startPos = transform.position;
         GetNewDirection();
-
-        Debug.Log("endPos: " + endPos);
-
     }
 
     void OnTriggerEnter2D (Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Chasing");
             chaseBehaviour.enabled = true;
         }
     }
@@ -46,7 +40,6 @@ public class EnemyPatroller : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Stopped Chasing");
             chaseBehaviour.enabled = false;
             GetNewDirection();
             enemyRigidbody2d.velocity = new Vector2(0, 0);
@@ -57,7 +50,8 @@ public class EnemyPatroller : MonoBehaviour {
     {
         if (col.gameObject.tag == "Border")
         {
-            Debug.Log("Hit a wall");
+            Vector3 newPos = startPos - endPos;
+            endPos = startPos + newPos;
         }
     }
 
