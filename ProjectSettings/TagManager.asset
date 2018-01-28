@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Node
   - Projectile
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX
