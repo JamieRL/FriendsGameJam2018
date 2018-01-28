@@ -9,6 +9,7 @@ TagManager:
   - Node
   - Projectile
   - DeathEmitters
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX
