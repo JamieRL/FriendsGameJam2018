@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Node
   - Projectile
+  - DeathEmitters
   layers:
   - Default
   - TransparentFX

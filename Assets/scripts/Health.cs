@@ -18,6 +18,9 @@ public class Health : MonoBehaviour {
 
     public float deathViewTime = 2.0f;
 
+    public Animator deathAnimator;
+
+    public GameObject deathEmitters;
 
     public string LevelToLoad = "";
 
@@ -46,10 +49,13 @@ public class Health : MonoBehaviour {
     }
 
     public virtual void Respawn() {
+        Debug.Log("respawning");
         numLives = numLives - 1;
         transform.position = respawnPosition;
         transform.rotation = respawnRotation;
         health = respawnHealthPoints;
+        deathAnimator.SetBool("isDead", false);
+        deathEmitters.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -64,15 +70,24 @@ public class Health : MonoBehaviour {
         }
 
         if(health <= 0) {
+            deathTime += Time.deltaTime;
+            if(deathAnimator)
+            {
+                deathAnimator.SetBool("isDead", true);
+                deathEmitters.SetActive(true);
+            }            //kill actor
+            if (deathTime > deathViewTime)
+            {
+                if (numLives > 0)
+                {
+                    Respawn();
+                }
+                else
+                {
 
-            //kill actor
-            if (numLives > 0) {
-                Respawn();
-            }
-            else {
-
-                isAlive = false;
-                Die();
+                    isAlive = false;
+                    Die();
+                }
             }
         }
         else {
