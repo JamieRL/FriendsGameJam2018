@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4436099188478646}
   m_Layer: 0
-  m_Name: Music
+  m_Name: AllMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b51d528638f111244a1458e8f1b00003, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 198954799af67e042a17aa09e9205946, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -308,7 +308,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a65b779a1c3904a4f8660ce13cdb0ed4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0bc9d4c36e5e4f0489df912e8e3a8ccd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -388,7 +388,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 971cbbc6782115841a52c444dc5efbc3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 106c8b37c21d377409b6ee159d6cc144, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -468,7 +468,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c43e2cffc84ff37419d84ea716ac56f2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fea446ecbac05af4dbdb9276dc2ec6de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -548,7 +548,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4668a34f4c430f8469114d1a81736b19, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 64d51a99d073f884aba42d3bb05ca4e2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -628,7 +628,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e2371a6efb6c984b81e33cd384a8713, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 573a6249417b3924fa3693072c4ecb91, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

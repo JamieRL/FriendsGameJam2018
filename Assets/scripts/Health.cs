@@ -14,6 +14,10 @@ public class Health : MonoBehaviour {
     private Vector2 respawnPosition;
     private Quaternion respawnRotation;
 
+    private float deathTime = 0.0f;
+
+    public float deathViewTime = 2.0f;
+
 
     public string LevelToLoad = "";
 
@@ -50,6 +54,7 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
+        
         if (GameManager.gm)
         {
             if (GameManager.gm.gameIsOver)
@@ -65,9 +70,13 @@ public class Health : MonoBehaviour {
                 Respawn();
             }
             else {
+
                 isAlive = false;
                 Die();
             }
+        }
+        else {
+            deathTime = 0.0f;
         }
 
 	}

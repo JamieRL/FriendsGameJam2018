@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public Canvas menuCanvas;
 
+    public int numberOfNodes = 1;
+
     private GameObject[] nodes;
     private GameObject[] musicTracks;
 
@@ -29,16 +31,17 @@ public class GameManager : MonoBehaviour
         }
 
         musicTracks = GameObject.FindGameObjectsWithTag("BackgroundMusic");
-        Debug.Log(musicTracks);
-        randomMusic();
+        nodes = GameObject.FindGameObjectsWithTag("Node");
+        
+        setRandomMusic();
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+        
             
     }
     void startGame() {
         gameIsOver = false;
         menuCanvas.gameObject.SetActive(false);
-        nodes = GameObject.FindGameObjectsWithTag("Node");
     }
 
     public void restartGame() {
@@ -46,20 +49,14 @@ public class GameManager : MonoBehaviour
         menuCanvas.gameObject.SetActive(true);
     }
 
-    void randomMusic()
+    void setRandomMusic()
     {
         int trackNumber = Random.Range(0, musicTracks.Length - 1);
+        Debug.Log(trackNumber);
         GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
         AudioSource randomTrack = Instantiate(musicTracks[trackNumber].GetComponent<AudioSource>(), cam.transform);
 
         randomTrack.mute = false;
-
-        Debug.Log(randomTrack);
-        /*AudioSource backgroundMusic = cam.AddComponent<AudioSource>();
-        backgroundMusic.clip = randomTrack.clip;
-        backgroundMusic.mute = false;
-        backgroundMusic.loop = randomTrack.loop;*/
-
     }
 
     // Use this for initialization
@@ -72,14 +69,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*foreach (GameObject node in nodes)
-        {
-            if (!node.GetComponent<Node>().isPowered())
-            {
+        
+        foreach (GameObject node in nodes){
+            if (!node.GetComponent<Node>().isPowered()){
                 return;
             }
-        }*/
+        }
 
-        // TODO: Put winning stuff here
+        // TODO: Winning stuff here
+        Debug.Log("Wow you win!");
+
     }
 }
