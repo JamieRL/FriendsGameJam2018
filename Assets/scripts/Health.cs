@@ -14,6 +14,10 @@ public class Health : MonoBehaviour {
     private Vector2 respawnPosition;
     private Quaternion respawnRotation;
 
+    private float deathTime = 0.0f;
+
+    public float deathViewTime = 2.0f;
+
 
     public string LevelToLoad = "";
 
@@ -52,15 +56,33 @@ public class Health : MonoBehaviour {
             numLives = numLives - 1;
             if(numLives <= 0) {
                 isAlive = false;
-                SceneManager.LoadScene(LevelToLoad);
+                deathTime += Time.deltaTime;
+                //animator.setBool("isDead", true);
+                if (deathTime >= deathViewTime)
+                {
+                    SceneManager.LoadScene(LevelToLoad);
+                }
 
             }
             else {
-                transform.position = respawnPosition;
-                transform.rotation = respawnRotation;
-                health = respawnHealthPoints;
+
+                //signal the explosion animator
+                //animator.setBool("isDead", true);
+                deathTime += Time.deltaTime;
+
+                //hold off on respawning the player until you the explosion is done
+                if (deathTime >= deathViewTime)
+                {
+                    //animator.setBool("isDead", false);
+                    transform.position = respawnPosition;
+                    transform.rotation = respawnRotation;
+                    health = respawnHealthPoints;
+                }
 
             }
+        }
+        else {
+            deathTime = 0.0f;
         }
 
 	}
