@@ -5,10 +5,18 @@ using UnityEngine;
 public class Connector : Health {
 
 
-   // public float maxTimeDead = 5.0f;
-   // private float timeDead = 0.0f;
+    // public float maxTimeDead = 5.0f;
+    // private float timeDead = 0.0f;
+    public float deathDelay = 1.0f;
 
 
+    IEnumerator waitAndDestroy(){
+        GetComponent<Animator>().SetBool("isDead", true);
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        yield return new WaitForSeconds(deathDelay);
+        Destroy(gameObject);
+    }
     // Override player die method
     public override void Die() {
         Collider2D[] colliders = new Collider2D[15];
@@ -26,11 +34,11 @@ public class Connector : Health {
 
 
                     //kill the connector enemy
-                    Destroy(gameObject);
+                    StartCoroutine(waitAndDestroy());
                 }
             }
         }
-        Destroy(gameObject);
+        StartCoroutine(waitAndDestroy());
 
     }
 
@@ -40,7 +48,9 @@ public class Connector : Health {
 
     public override void Update()
     {
+        
         if(health <= 0) {
+            isAlive = false;
             Die();
         }
 

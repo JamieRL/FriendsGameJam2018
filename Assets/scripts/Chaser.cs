@@ -20,19 +20,21 @@ public class Chaser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        Vector3 dirToTarget = Vector3.Normalize(target.position - transform.position);
-        float distance = Vector3.Distance(transform.position, target.position);
-
-        transform.up = dirToTarget;
-
-        if (distance > minFollowDistance)
+        if (GetComponent<Health>().isAlive)
         {
-            rigidbody2d.velocity = new Vector2(dirToTarget.x * moveSpeed, dirToTarget.y * moveSpeed);
-        }
-        else
-        {
-            rigidbody2d.velocity = new Vector2(0, 0);
+            Vector3 dirToTarget = Vector3.Normalize(target.position - transform.position);
+            float distance = Vector3.Distance(transform.position, target.position);
+
+            transform.up = dirToTarget;
+
+            if (distance > minFollowDistance)
+            {
+                rigidbody2d.velocity = new Vector2(dirToTarget.x * moveSpeed, dirToTarget.y * moveSpeed);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector2(0, 0);
+            }
         }
 	}
 }
