@@ -909,6 +909,7 @@ MonoBehaviour:
   gameIsOver: 1
   startButton: {fileID: 1344452566}
   menuCanvas: {fileID: 655994663}
+  numberOfNodes: 1
 --- !u!4 &930958123
 Transform:
   m_ObjectHideFlags: 0
