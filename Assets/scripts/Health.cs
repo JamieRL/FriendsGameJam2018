@@ -14,6 +14,9 @@ public class Health : MonoBehaviour {
     private Vector2 respawnPosition;
     private Quaternion respawnRotation;
 
+
+    public AudioClip explosionClip;
+
     private float deathTime = 0.0f;
 
     public float deathViewTime = 2.0f;
@@ -76,7 +79,7 @@ public class Health : MonoBehaviour {
             {
                 deathAnimator.SetBool("isDead", true);
                 deathEmitters.SetActive(true);
-                deathAudioSource.Play();
+                AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
             }            //kill actor
             if (deathTime > deathViewTime)
             {
