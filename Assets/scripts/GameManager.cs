@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public Canvas menuCanvas;
 
+    public int numberOfNodes = 1;
+
+    private GameObject[] nodes;
+
+
 
     private void Awake() {
         if (gm == null)
@@ -28,6 +33,7 @@ public class GameManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+        nodes = GameObject.FindGameObjectsWithTag("Node");
             
     }
     void startGame() {
@@ -51,6 +57,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        foreach (GameObject node in nodes){
+            if (!node.GetComponent<Node>().isPowered()){
+                return;
+            }
+        }
 
+        // TODO: Winning stuff here
+        Debug.Log("Wow you win!");
     }
 }

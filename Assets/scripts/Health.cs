@@ -54,6 +54,7 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
+        
         if (GameManager.gm)
         {
             if (GameManager.gm.gameIsOver)
