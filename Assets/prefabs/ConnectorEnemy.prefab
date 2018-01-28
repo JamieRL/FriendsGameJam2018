@@ -26,10 +26,10 @@ GameObject:
   - component: {fileID: 95926732738112878}
   - component: {fileID: 114441079014816004}
   - component: {fileID: 114046226186506064}
-  - component: {fileID: 58724278580063112}
   - component: {fileID: 198051722373482812}
   - component: {fileID: 199792376505827322}
   - component: {fileID: 96342968059889162}
+  - component: {fileID: 114132789167798696}
   m_Layer: 0
   m_Name: ConnectorEnemy
   m_TagString: Untagged
@@ -263,6 +263,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   directionChangeRate: 1
+--- !u!114 &114132789167798696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050366888732594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1710d7033d4134d31932840c57c60901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+  damageOnTrigger: 0
+  damageOnCollision: 1
+  continuousDamage: 0
+  continuousTimeBetweenHits: 0
+  destroySelfOnImpact: 0
+  delayBeforeDestroy: 0
+  explosionPrefab: {fileID: 0}
 --- !u!114 &114189105198192278
 MonoBehaviour:
   m_ObjectHideFlags: 1

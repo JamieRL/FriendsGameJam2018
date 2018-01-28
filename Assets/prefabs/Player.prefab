@@ -411,8 +411,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 298663bc125beef41a8a0f4fdc4a965a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb3c8a850fcd0343908d2a3192a8c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1863357700504070, guid: 5c733c2cc934d524bb21a7a0240fff71, type: 2}
+  projectile: {fileID: 1383478133416708, guid: 4fa5733b07b5c4b2787dbe3765dd40f8, type: 2}
   projectileSpeed: 20
   fireRate: 0.75
   shootSFX: {fileID: 8300000, guid: 9090a9e41f886d040a25d728c6fa824c, type: 3}
@@ -543,12 +543,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe2eb0310ac84399abfc39ed3def7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 2
   numLives: 2
   isAlive: 1
   respawnHealthPoints: 5
+  explosionClip: {fileID: 8300000, guid: 9688fe7034d7385409f1254e6e18a071, type: 3}
+  deathDelay: 1.8
   deathViewTime: 0.5
   deathAnimator: {fileID: 95425672516050218}
+  deathAudioSource: {fileID: 82807873106392326}
   deathEmitters: {fileID: 1996836197958774}
   LevelToLoad: 
 --- !u!114 &114840037750817518
@@ -562,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da828d86e01c42e2954faf2059c4264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
 --- !u!114 &114908706034080986
 MonoBehaviour:
   m_ObjectHideFlags: 1
