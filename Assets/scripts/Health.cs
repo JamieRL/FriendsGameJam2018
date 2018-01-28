@@ -17,7 +17,7 @@ public class Health : MonoBehaviour {
 
     public AudioClip explosionClip;
 
-    private float deathTime = 0.0f;
+    public float deathDelay = 0.6f;
 
     public float deathViewTime = 2.0f;
 
@@ -47,15 +47,62 @@ public class Health : MonoBehaviour {
         health = health + amount;
     }
 
-    public virtual void Die() {
+    private void GameOver() {
         SceneManager.LoadScene(LevelToLoad);
+
+    }
+
+    public virtual void Die() {
+        numLives = numLives - 1;
+        isAlive = false;
+        explode();
+        if (numLives < 0)
+        {
+            GameOver();
+            StartCoroutine(waitAndGameOver());
+        }
+        else {
+            StartCoroutine(waitAndRespawn());
+        }
+
+
+    }
+
+    private void freeze() {
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        GetComponent<Rigidbody2D>().angularVelocity = 0;
+
+    }
+
+    private void unFreeze(){
+        GetComponent<Rigidbody2D>().isKinematic = false;
+
+    }
+
+    IEnumerator waitAndGameOver()
+    {
+        freeze();
+        yield return new WaitForSeconds(deathDelay);
+        deathAnimator.SetBool("isDead", false);
+
+        DestroyObject(gameObject);
+
+    }
+
+    IEnumerator waitAndRespawn()
+    {
+        freeze();
+        yield return new WaitForSeconds(deathDelay);
+        deathAnimator.SetBool("isDead", false);
+
+        Respawn();
 
     }
 
     public virtual void Respawn() {
         
-        numLives = numLives - 1;
-
+        isAlive = true;
         transform.position = respawnPosition;
         transform.rotation = respawnRotation;
 
@@ -65,6 +112,14 @@ public class Health : MonoBehaviour {
 
         deathEmitters.SetActive(false);
 
+        unFreeze();
+
+    }
+
+    private void explode(){
+        deathAnimator.SetBool("isDead", true);
+        deathEmitters.SetActive(true);
+        AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
     }
 	
 	// Update is called once per frame
@@ -77,31 +132,14 @@ public class Health : MonoBehaviour {
                 return;
             }
         }
-
         if(health <= 0) {
-            deathTime += Time.deltaTime;
-            if(deathAnimator)
+            if (isAlive)
             {
-                deathAnimator.SetBool("isDead", true);
-                deathEmitters.SetActive(true);
-                AudioSource.PlayClipAtPoint(explosionClip, Camera.main.transform.position);
-            }            //kill actor
-            if (deathTime > deathViewTime)
-            {
-                if (numLives > 0)
-                {
-                    Respawn();
-                }
-                else
-                {
-
-                    isAlive = false;
-                    Die();
-                }
+                Die();
             }
-        }
-        else {
-            deathTime = 0.0f;
+            else {
+                deathAnimator.SetBool("isDead", false);
+            }
         }
 
 	}

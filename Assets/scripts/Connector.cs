@@ -7,7 +7,6 @@ public class Connector : Health {
 
     // public float maxTimeDead = 5.0f;
     // private float timeDead = 0.0f;
-    public float deathDelay = 0.2f;
 
 
     IEnumerator waitAndDestroy(){

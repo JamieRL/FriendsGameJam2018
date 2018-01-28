@@ -953,11 +953,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1146642059 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82807873106392326, guid: 3d832762721204b24bbf52b941355096,
-    type: 2}
-  m_PrefabInternal: {fileID: 1287152070}
 --- !u!1 &1171544505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,36 +1071,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 82807873106392326, guid: 3d832762721204b24bbf52b941355096,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 298663bc125beef41a8a0f4fdc4a965a, type: 3}
-    - target: {fileID: 82807873106392326, guid: 3d832762721204b24bbf52b941355096,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114824643333266040, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
-      propertyPath: deathAudioSource
-      value: 
-      objectReference: {fileID: 1146642059}
-    - target: {fileID: 82807873106392326, guid: 3d832762721204b24bbf52b941355096,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
-        type: 2}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 1383478133416708, guid: 4fa5733b07b5c4b2787dbe3765dd40f8,
-        type: 2}
-    - target: {fileID: 114840037750817518, guid: 3d832762721204b24bbf52b941355096,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 7
+      propertyPath: deathDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d832762721204b24bbf52b941355096, type: 2}
