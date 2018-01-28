@@ -168,6 +168,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 11.726666
       objectReference: {fileID: 0}
+    - target: {fileID: 1958042005929092, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
+      propertyPath: m_TagString
+      value: Border
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
   m_IsPrefabParent: 0
@@ -701,6 +705,10 @@ Prefab:
       propertyPath: m_Name
       value: BoxEdgeR
       objectReference: {fileID: 0}
+    - target: {fileID: 1958042005929092, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
+      propertyPath: m_TagString
+      value: Border
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
   m_IsPrefabParent: 0
@@ -767,6 +775,10 @@ Prefab:
     - target: {fileID: 4778074415131994, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
       propertyPath: m_LocalScale.x
       value: 12.141266
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958042005929092, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
+      propertyPath: m_TagString
+      value: Border
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
@@ -1082,6 +1094,10 @@ Prefab:
       propertyPath: offset
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 1237793636290700, guid: 3d832762721204b24bbf52b941355096, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d832762721204b24bbf52b941355096, type: 2}
   m_IsPrefabParent: 0
@@ -1356,6 +1372,10 @@ Prefab:
     - target: {fileID: 4778074415131994, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
       propertyPath: m_LocalScale.x
       value: 11.744735
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958042005929092, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
+      propertyPath: m_TagString
+      value: Border
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
