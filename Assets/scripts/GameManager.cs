@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
 
     public Button hideInstructionButton;
 
+    public Button backToMenuButton;
+
+    public Canvas winScreenCanvas;
+
     public Canvas menuCanvas;
 
     public Canvas instructionsCanvas;
@@ -80,16 +84,22 @@ public class GameManager : MonoBehaviour
         randomTrack.mute = false;
     }
 
+    private void reloadGame()
+    {
+        SceneManager.LoadScene(SceneToLoad);
+
+    }
     // Use this for initialization
     void Start()
     {
         Button strtbtn = startButton.GetComponent<Button>();
         Button instrbtn = instructionButton.GetComponent<Button>();
         Button hideinstrbtn = hideInstructionButton.GetComponent<Button>();
-
+        Button bckmnubtn = backToMenuButton.GetComponent<Button>();
         strtbtn.onClick.AddListener(startGame);
         instrbtn.onClick.AddListener(showInstructions);
         hideinstrbtn.onClick.AddListener(hideInstructions);
+        bckmnubtn.onClick.AddListener(reloadGame);
 
       
     }
@@ -111,7 +121,9 @@ public class GameManager : MonoBehaviour
 
         // TODO: Winning stuff here
         Debug.Log("Wow you win!");
-        SceneManager.LoadScene(SceneToLoad);
+        winScreenCanvas.gameObject.SetActive(true);
+        gameIsOver = true;
+        //SceneManager.LoadScene(SceneToLoad);
 
 
     }

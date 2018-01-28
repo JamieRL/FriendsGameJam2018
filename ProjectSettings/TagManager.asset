@@ -22,7 +22,7 @@ TagManager:
   - 
   - character
   - action
-  - 
+  - WinScreen
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 211342335
+    locked: 0
+  - name: Text
+    uniqueID: 1169174705
     locked: 0
