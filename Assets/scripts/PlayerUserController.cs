@@ -27,11 +27,9 @@ public class PlayerUserController : MonoBehaviour {
         }
 
         if(Input.GetButton("Horizontal") || Input.GetButton(("Vertical"))) {
-            Debug.Log("setting animator to boosting");
             animator.SetBool("isBoosting", true);
         }
         else {
-            Debug.Log(("setting animator to not boosting"));
             animator.SetBool("isBoosting", false);
         }
 		if (Input.GetButton("Fire1"))
