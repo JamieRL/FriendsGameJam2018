@@ -4566,7 +4566,8 @@ Prefab:
         type: 2}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 100000, guid: 18fcd494ab71841d695135246693eb3a, type: 2}
+      objectReference: {fileID: 1863357700504070, guid: 5c733c2cc934d524bb21a7a0240fff71,
+        type: 2}
     - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
       propertyPath: fireRate
