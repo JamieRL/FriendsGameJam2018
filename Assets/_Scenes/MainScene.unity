@@ -4561,12 +4561,17 @@ Prefab:
         type: 2}
       propertyPath: shootSFX
       value: 
-      objectReference: {fileID: 8300000, guid: f75e7b13e2156284196d625d0bf5c21f, type: 3}
+      objectReference: {fileID: 8300000, guid: c7a75cdab2cbed74c87df3e04ac1354a, type: 3}
     - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 100000, guid: 18fcd494ab71841d695135246693eb3a, type: 2}
+    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: fireRate
+      value: 0.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d832762721204b24bbf52b941355096, type: 2}
   m_IsPrefabParent: 0
