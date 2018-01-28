@@ -27,7 +27,7 @@ public class ShooterProjectile : MonoBehaviour
             if (projectile)
             {
                 // Instantiante projectile at the camera + 1 meter forward with camera rotation
-                GameObject newProjectile = Instantiate(projectile, transform.position + transform.right, transform.rotation) as GameObject;
+                GameObject newProjectile = Instantiate(projectile, transform.position + transform.up, transform.rotation) as GameObject;
 
                 // if the projectile does not have a rigidbody component, add one
                 if (!newProjectile.GetComponent<Rigidbody2D>())
@@ -39,7 +39,7 @@ public class ShooterProjectile : MonoBehaviour
                 newProjectile.GetComponent<Rigidbody2D>().gravityScale = 0;
 
                 // Apply force to the newProjectile's Rigidbody component if it has one
-                newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.right.x * projectileSpeed, transform.right.y * projectileSpeed);
+                newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.up.x * projectileSpeed, transform.up.y * projectileSpeed);
 
                 // play sound effect if set
                 if (shootSFX)
