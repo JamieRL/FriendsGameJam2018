@@ -7,6 +7,7 @@ TagManager:
   - Border
   - Tower
   - Node
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Playfield
+    uniqueID: 3367733749
+    locked: 0
+  - name: Player
+    uniqueID: 211342335
     locked: 0
