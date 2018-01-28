@@ -425,7 +425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.050308533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -468,7 +468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalScale.z
-      value: -0.3
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalScale.x
@@ -2153,7 +2153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4181789255379234, guid: 3c1385ac404e549efb4edaad97476725, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.11537389
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4181789255379234, guid: 3c1385ac404e549efb4edaad97476725, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2184,7 +2184,27 @@ Prefab:
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: maxNumberSpawnedEnemies
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
+        type: 2}
+      propertyPath: xMinRange
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
+        type: 2}
+      propertyPath: xMaxRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
+        type: 2}
+      propertyPath: yMinRange
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
+        type: 2}
+      propertyPath: yMaxRange
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c1385ac404e549efb4edaad97476725, type: 2}
@@ -2206,7 +2226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.050308533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4237399470587512, guid: 56c9be061a28b214c9ed6fe8e019c8dd, type: 2}
       propertyPath: m_LocalRotation.x
