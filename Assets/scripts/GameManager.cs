@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
     public int numberOfNodes = 1;
 
     private GameObject[] nodes;
-
-
+    private GameObject[] musicTracks;
 
     private void Awake() {
         if (gm == null)
@@ -31,9 +30,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        musicTracks = GameObject.FindGameObjectsWithTag("BackgroundMusic");
+        nodes = GameObject.FindGameObjectsWithTag("Node");
+        
+        setRandomMusic();
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-        nodes = GameObject.FindGameObjectsWithTag("Node");
+        
             
     }
     void startGame() {
@@ -46,6 +49,15 @@ public class GameManager : MonoBehaviour
         menuCanvas.gameObject.SetActive(true);
     }
 
+    void setRandomMusic()
+    {
+        int trackNumber = Random.Range(0, musicTracks.Length - 1);
+        Debug.Log(trackNumber);
+        GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
+        AudioSource randomTrack = Instantiate(musicTracks[trackNumber].GetComponent<AudioSource>(), cam.transform);
+
+        randomTrack.mute = false;
+    }
 
     // Use this for initialization
     void Start()
@@ -66,5 +78,6 @@ public class GameManager : MonoBehaviour
 
         // TODO: Winning stuff here
         Debug.Log("Wow you win!");
+
     }
 }
