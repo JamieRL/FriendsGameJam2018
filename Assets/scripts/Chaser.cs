@@ -24,7 +24,7 @@ public class Chaser : MonoBehaviour {
         Vector3 dirToTarget = Vector3.Normalize(target.position - transform.position);
         float distance = Vector3.Distance(transform.position, target.position);
 
-        transform.right = dirToTarget;
+        transform.up = dirToTarget;
 
         if (distance > minFollowDistance)
         {
