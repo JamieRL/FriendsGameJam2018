@@ -21,46 +21,23 @@ public class Connector : Health {
 
     // Override player die method
     public override void Die() {
-        if (!deathRadius) {
-            gameObject.AddComponent<CircleCollider2D>();
-            deathRadius = gameObject.GetComponent<CircleCollider2D>();
-            deathRadius.isTrigger = true;
-            //deathRadius.transform.localScale = new Vector2(5, 5);
-            deathRadius.radius = 5;
+        Collider2D[] colliders = new Collider2D[15];
+        Collider2D m_collider = GetComponent<Collider2D>();
+
+        m_collider.OverlapCollider(new ContactFilter2D(), colliders);
+
+        foreach (Collider2D col in colliders) {
+            if(col.gameObject.tag == "Node"){
+                col.gameObject.GetComponent<Node>().powerOn();
+
+                //kill the connector enemy
+                Destroy(gameObject);
+            }
         }
     }
 
     public override void Respawn() {
         connected = false;
-    }
-
-    public bool isConnected() {
-        return connected;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Tower") {
-            connected = true;
-        }
-        if(collision.gameObject.tag == "Connector") {
-            if(collision.gameObject.GetComponent<Connector>().isConnected()){
-                connected = true;
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Tower")
-        {
-            connected = true;
-            connectedToTower = true;
-            return;
-        }
-        connectedObjects.Add(collision.gameObject);
-
-
     }
 
 
@@ -70,46 +47,7 @@ public class Connector : Health {
     {
         base.Update();
 
-        if(!isAlive) {
-            //Check for connection
-            bool hasConnection = false;
-            if (!connectedToTower)
-            {
-                if (connectedObjects.Count > 0)
-                {
-                    Debug.Log("Connected to chain");
-                    foreach (GameObject connectedObject in connectedObjects)
-                    {
-                        if (connectedObject.GetComponent<Connector>().isConnected())
-                        {
-                            hasConnection = true;
-                            Debug.Log("Chain has power");
-                            gameObject.GetComponent<Rigidbody2D>().angularVelocity = 80.0f;
 
-                        }
-
-                    }
-                    if(!hasConnection) {
-                        Debug.Log("CONNECTION HAS BEEN LOST");
-                    }
-                    connected = hasConnection;
-                    connectedObjects.Clear();
-                }
-            }
-            else {
-                Debug.Log("Connected to a tower");
-                gameObject.GetComponent<Rigidbody2D>().angularVelocity = 80.0f;
-
-                connectedToTower = false;
-            }
-
-            timeDead += Time.deltaTime;
-
-            if(timeDead >= maxTimeDead) {
-                Destroy(gameObject);
-            }
-        }
-        
     }
 
 
