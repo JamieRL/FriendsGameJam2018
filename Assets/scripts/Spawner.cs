@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour {
         // exit if there is a game manager and the game is over
         if (GameManager.gm)
         {
-            if (GameManager.gm.isGameOver)
+            if (GameManager.gm.gameIsOver)
                 return;
         }
 

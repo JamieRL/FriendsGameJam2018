@@ -13,6 +13,12 @@ public class TopDownCharacterMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+        if(GameManager.gm) {
+            if (GameManager.gm.gameIsOver) {
+                return;
+            }
+        }
+
 		Vector2 movingVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 		myRigidbody.AddForce(movingVector * moveSpeed);
 	}
