@@ -468,7 +468,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1e2371a6efb6c984b81e33cd384a8713, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -953,10 +953,10 @@ RectTransform:
   m_Father: {fileID: 1344452569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00000095367, y: -9.75}
+  m_SizeDelta: {x: -14.4, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171544507
 MonoBehaviour:
@@ -990,7 +990,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click here to help!
+  m_Text: Click here to save the galaxy!
 --- !u!222 &1171544508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1242,8 +1242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.729e-12, y: -93}
-  m_SizeDelta: {x: 218.4, y: 40.9}
+  m_AnchoredPosition: {x: 0, y: -86}
+  m_SizeDelta: {x: 344, y: 39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1364398875
 GameObject:
