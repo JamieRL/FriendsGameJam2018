@@ -19,6 +19,7 @@ public class Health : MonoBehaviour {
     public float deathViewTime = 2.0f;
 
     public Animator deathAnimator;
+    public AudioSource deathAudioSource;
 
     public GameObject deathEmitters;
 
@@ -75,6 +76,7 @@ public class Health : MonoBehaviour {
             {
                 deathAnimator.SetBool("isDead", true);
                 deathEmitters.SetActive(true);
+                deathAudioSource.Play();
             }            //kill actor
             if (deathTime > deathViewTime)
             {
