@@ -7,16 +7,20 @@ public class PlayerUserController : MonoBehaviour {
 
     private ShooterProjectile shooter;
 
-    private Animator animator;
+    private Animator shipAnimator;
+    public Animator cannonAnimator;
 
 	// Use this for initialization
 	void Start () {
+        
         shooter = GetComponent<ShooterProjectile>();
-        animator = GetComponent<Animator>();
+        shipAnimator = GetComponent<Animator>();
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
         
         if (GameManager.gm)
         {
@@ -27,14 +31,22 @@ public class PlayerUserController : MonoBehaviour {
         }
 
         if(Input.GetButton("Horizontal") || Input.GetButton(("Vertical"))) {
-            animator.SetBool("isBoosting", true);
+            shipAnimator.SetBool("isBoosting", true);
         }
         else {
-            animator.SetBool("isBoosting", false);
+            shipAnimator.SetBool("isBoosting", false);
         }
-		if (Input.GetButton("Fire1"))
+        if (cannonAnimator)
         {
-            shooter.Shoot();
+            if (Input.GetButton("Fire1"))
+            {
+                shooter.Shoot();
+
+            }
+            else
+            {
+                cannonAnimator.SetBool("fire", false);
+            }
         }
 	}
 }

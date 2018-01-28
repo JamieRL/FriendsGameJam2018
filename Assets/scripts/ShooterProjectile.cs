@@ -14,6 +14,8 @@ public class ShooterProjectile : MonoBehaviour
 
     private float lastShotTimeStamp;
 
+    public Animator cannonAnimator;
+
     void Start()
     {
         lastShotTimeStamp = 0.0f;
@@ -23,6 +25,7 @@ public class ShooterProjectile : MonoBehaviour
     {
         if ((Time.time - lastShotTimeStamp) >= fireRate)
         {
+            cannonAnimator.SetBool("fire", true);
             // if projectile is specified
             if (projectile)
             {
@@ -34,9 +37,6 @@ public class ShooterProjectile : MonoBehaviour
                 {
                     newProjectile.AddComponent<Rigidbody2D>();
                 }
-
-                //TODO: Remove this once projectile is created and default is 0 gravity scale
-                newProjectile.GetComponent<Rigidbody2D>().gravityScale = 0;
 
                 // Apply force to the newProjectile's Rigidbody component if it has one
                 newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.up.x * projectileSpeed, transform.up.y * projectileSpeed);
