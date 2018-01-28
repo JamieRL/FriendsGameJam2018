@@ -22,12 +22,12 @@ public class EngineNoise : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) {
-            movingAudio.volume = 0.7f;
+            movingAudio.volume = 0.2f;
             stationaryAudio.volume = 0.0f;
         }
         else
         {
-            stationaryAudio.volume = 0.3f;
+            stationaryAudio.volume = 0.1f;
             movingAudio.volume = 0.0f;
         }
 
