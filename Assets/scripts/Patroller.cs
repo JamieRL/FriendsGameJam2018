@@ -59,14 +59,16 @@ public class Patroller : MonoBehaviour
 
     void Update()
     {
-        if (!chaseBehaviour.enabled)
-        {
-            if (Vector3.Distance(transform.position, endPos) < 1)
+        if (GetComponent<Health>().isAlive) { 
+            if (!chaseBehaviour.enabled)
             {
-                GetNewDirection();
-            }
+                if (Vector3.Distance(transform.position, endPos) < 1)
+                {
+                    GetNewDirection();
+                }
 
-            transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime * moveSpeed);
+                transform.position = Vector3.MoveTowards(transform.position, endPos, Time.deltaTime * moveSpeed);
+        }
         }
 
     }
