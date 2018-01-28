@@ -35,9 +35,21 @@ public class Health : MonoBehaviour {
     public void heal(int amount) {
         health = health + amount;
     }
+
+    public virtual void Die() {
+        SceneManager.LoadScene(LevelToLoad);
+
+    }
+
+    public virtual void Respawn() {
+        numLives = numLives - 1;
+        transform.position = respawnPosition;
+        transform.rotation = respawnRotation;
+        health = respawnHealthPoints;
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
         if (GameManager.gm)
         {
             if (GameManager.gm.gameIsOver)
@@ -45,21 +57,16 @@ public class Health : MonoBehaviour {
                 return;
             }
         }
-        
-        if(health <= 0) {
-            
-            //kill actor
-            numLives = numLives - 1;
-            if(numLives <= 0) {
-                isAlive = false;
-                SceneManager.LoadScene(LevelToLoad);
 
+        if(health <= 0) {
+
+            //kill actor
+            if (numLives > 0) {
+                Respawn();
             }
             else {
-                transform.position = respawnPosition;
-                transform.rotation = respawnRotation;
-                health = respawnHealthPoints;
-
+                isAlive = false;
+                Die();
             }
         }
 
