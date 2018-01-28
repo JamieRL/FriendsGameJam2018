@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - DeathEmitters
   - BackgroundMusic
+  - PlayerBolt
   layers:
   - Default
   - TransparentFX

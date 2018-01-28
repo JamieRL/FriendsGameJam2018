@@ -40,7 +40,9 @@ public class Connector : Health {
 
     public override void Update()
     {
-        base.Update();
+        if(health <= 0) {
+            Die();
+        }
 
 
     }

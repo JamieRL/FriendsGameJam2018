@@ -21,11 +21,12 @@ public class Damage : MonoBehaviour {
     {
         if (damageOnTrigger)
         {
-            if (this.tag == "PlayerBullet" && collision.gameObject.tag == "Player") // if the player got hit with it's own bullets, ignore it
+            if (this.tag == "PlayerBolt" && collision.gameObject.tag == "Player") // if the player got hit with it's own bullets, ignore it
                 return;
 
             if (collision.gameObject.GetComponent<Health>() != null)
             {   // if the hit object has the Health script on it, deal damage
+                Debug.Log("Critical hit!");
                 collision.gameObject.GetComponent<Health>().damageHealth(damageAmount);
 
                 if (destroySelfOnImpact)
