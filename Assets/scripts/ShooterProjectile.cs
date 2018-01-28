@@ -54,7 +54,7 @@ public class ShooterProjectile : MonoBehaviour
                     {
                         // dynamically create a new gameObject with an AudioSource
                         // this automatically destroys itself once the audio is done
-                        AudioSource.PlayClipAtPoint(shootSFX, newProjectile.transform.position);
+                        AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position);
                     }
                 }
 

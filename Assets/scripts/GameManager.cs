@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     private GameObject[] nodes;
     private GameObject[] musicTracks;
 
+    public string SceneToLoad = "";
+
     private void Awake() {
         if (gm == null)
         {
@@ -35,7 +38,10 @@ public class GameManager : MonoBehaviour
         
         setRandomMusic();
         //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+        if(SceneToLoad ==""){
+            SceneToLoad = SceneManager.GetActiveScene().name;
+        }
         
             
     }
@@ -52,7 +58,6 @@ public class GameManager : MonoBehaviour
     void setRandomMusic()
     {
         int trackNumber = Random.Range(0, musicTracks.Length - 1);
-        Debug.Log(trackNumber);
         GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
         AudioSource randomTrack = Instantiate(musicTracks[trackNumber].GetComponent<AudioSource>(), cam.transform);
 
@@ -69,6 +74,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //repopulate nodes upon restart
+        if(nodes.Length == 0) {
+            nodes = GameObject.FindGameObjectsWithTag("Node");
+
+        }
         
         foreach (GameObject node in nodes){
             if (!node.GetComponent<Node>().isPowered()){
@@ -78,6 +88,8 @@ public class GameManager : MonoBehaviour
 
         // TODO: Winning stuff here
         Debug.Log("Wow you win!");
+        SceneManager.LoadScene(SceneToLoad);
+
 
     }
 }

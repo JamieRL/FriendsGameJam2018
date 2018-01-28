@@ -53,13 +53,18 @@ public class Health : MonoBehaviour {
     }
 
     public virtual void Respawn() {
-        Debug.Log("respawning");
+        
         numLives = numLives - 1;
+
         transform.position = respawnPosition;
         transform.rotation = respawnRotation;
+
         health = respawnHealthPoints;
+
         deathAnimator.SetBool("isDead", false);
+
         deathEmitters.SetActive(false);
+
     }
 	
 	// Update is called once per frame
