@@ -4557,6 +4557,16 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.pivot.y
       value: 0.5051011
       objectReference: {fileID: 0}
+    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: shootSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f75e7b13e2156284196d625d0bf5c21f, type: 3}
+    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 100000, guid: 18fcd494ab71841d695135246693eb3a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d832762721204b24bbf52b941355096, type: 2}
   m_IsPrefabParent: 0
