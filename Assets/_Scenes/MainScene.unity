@@ -495,6 +495,11 @@ Prefab:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 61679747859750726, guid: 1a01abecdcc3f4778879063e274570fe,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: afe77666a8c834c00ae7ddc158ca5dd4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
   m_IsPrefabParent: 0
@@ -1218,6 +1223,11 @@ Prefab:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 61679747859750726, guid: 1a01abecdcc3f4778879063e274570fe,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: afe77666a8c834c00ae7ddc158ca5dd4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
   m_IsPrefabParent: 0
@@ -1289,6 +1299,11 @@ Prefab:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 61679747859750726, guid: 1a01abecdcc3f4778879063e274570fe,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: afe77666a8c834c00ae7ddc158ca5dd4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
   m_IsPrefabParent: 0
@@ -1713,6 +1728,44 @@ Prefab:
       propertyPath: health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 212986751510992446, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285951630228696, guid: 3d832762721204b24bbf52b941355096, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 12.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285951630228696, guid: 3d832762721204b24bbf52b941355096, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 114840037750817518, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: projectileSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50659210377946572, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1.3376803
+      objectReference: {fileID: 0}
+    - target: {fileID: 50659210377946572, guid: 3d832762721204b24bbf52b941355096,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d832762721204b24bbf52b941355096, type: 2}
   m_IsPrefabParent: 0
@@ -2065,6 +2118,11 @@ Prefab:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 61679747859750726, guid: 1a01abecdcc3f4778879063e274570fe,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: afe77666a8c834c00ae7ddc158ca5dd4, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 1a01abecdcc3f4778879063e274570fe, type: 2}
