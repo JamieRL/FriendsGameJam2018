@@ -1744,12 +1744,12 @@ Prefab:
     - target: {fileID: 114840037750817518, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
       propertyPath: moveSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
       propertyPath: projectileSpeed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114277692279893342, guid: 3d832762721204b24bbf52b941355096,
         type: 2}
@@ -2525,27 +2525,27 @@ Prefab:
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: maxNumberSpawnedEnemies
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: xMinRange
-      value: -15
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: xMaxRange
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: yMinRange
-      value: -15
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 114436196150829732, guid: 3c1385ac404e549efb4edaad97476725,
         type: 2}
       propertyPath: yMaxRange
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c1385ac404e549efb4edaad97476725, type: 2}
